@@ -20,4 +20,23 @@ window.addEventListener("click", function (e) {
     if (e.target === modal) modal.style.display = "none";
 });
 
+barba.init({
+    transitions: [{
+        name: 'fade',
+        async leave(data) {
+            await gsap.to(data.current.container, {
+                opacity: 0,
+                duration: 0.4
+            });
+        },
+        async enter(data) {
+            await gsap.from(data.next.container, {
+                opacity: 0,
+                duration: 0.4
+            });
+        }
+    }]
+});
+
+
 

@@ -2,14 +2,113 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Сотрудники | ГазСпецСтрой</title>
+  <title>Сотрудники — ГазСпецСтрой</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
+  <script src="js/main.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<button class="floating-contact" onclick="openContactModal()">📞</button>
 <body>
-<header><a href="index.html">← На главную</a></header>
-<main class="section container">
-  <h1>Наша команда</h1>
-  <p>Здесь появятся фотографии и описания сотрудников.</p>
-</main>
+<header>
+  <div class="container header">
+    <div class="logo">
+      <img src="images/logo.png" alt="ГазСпецСтрой">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="about.html">Компания</a></li>
+        <li><a href="team.html" class="active">Сотрудники</a></li>
+        <li><a href="projects.html">Объекты</a></li>
+      </ul>
+    </nav>
+    <div class="contacts">
+      <a href="tel:+79097969015">+7 909 796 90 15</a><br>
+      <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
+      <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
+    </div>
+  </div>
+</header>
+<div class="page-background">
+
+
+<section class="section team-slider">
+  <div class="container slider-layout">
+    <div class="team-text">
+      <h1>Наша команда</h1>
+      <p>Компания ГазСпецСтрой — это коллектив из более чем 50 профессионалов, обладающих профильным образованием и многолетним опытом. Наши специалисты занимаются проектированием, строительством и эксплуатацией инженерных систем по всей стране.</p>
+    </div>
+
+    <div class="team-carousel">
+      <div class="team-slide">
+        <img src="images/people_01.jpg" alt="Андрей Молчанов">
+        <div class="caption">
+          <h3>Андрей Молчанов</h3>
+          <p>Генеральный директор</p>
+        </div>
+      </div>
+      <div class="team-slide">
+        <img src="images/people_02.jpg" alt="Нина Лукашонок">
+        <div class="caption">
+          <h3>Нина Лукашонок</h3>
+          <p>Главный инженер-проектировщик</p>
+        </div>
+      </div>
+      <div class="team-slide">
+        <img src="images/people_03.jpg" alt="Михаил Сигеев">
+        <div class="caption">
+          <h3>Михаил Сигеев</h3>
+          <p>Начальник производственного участка</p>
+        </div>
+      </div>
+      <!-- Добавь других сотрудников по аналогии -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© ГазСпецСтрой, 2003–2025. Все права защищены.</p>
+  </div>
+</footer>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContactModal()">×</span>
+    <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 909 796 90 15</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@example.com">rostmolchanov@mail.ru</a></p>
+    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy">https://vk.com/gazspecstroy</a></p>
+  </div>
+</div>
+
+
+
+<script>
+  // Простой карусельный скрипт (прокрутка по таймеру)
+  let index = 0;
+  const slides = document.querySelectorAll('.team-slide');
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.style.display = (idx === i) ? 'block' : 'none';
+    });
+  }
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+  setInterval(nextSlide, 5000);
+  window.addEventListener('DOMContentLoaded', () => showSlide(index));
+</script>
+
+
 </body>
 </html>
