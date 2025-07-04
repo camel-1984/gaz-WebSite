@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ГазСпецСтрой</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<button class="floating-contact" onclick="openContactModal()">📞</button>
+<body>
+<header>
+  <div class="container header-flex">
+    <div class="logo">ГазСпецСтрой</div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="about.html">Компания</a></li>
+        <li><a href="team.html">Сотрудники</a></li>
+        <li><a href="projects.html">Объекты</a></li>
+
+      </ul>
+    </nav>
+
+    <div class="contacts">
+      <a href="tel:+70000000000"> +7 909 796 90 15</a><br>
+      <a href="mailto:info@example.com"> rostmolchanov@mail.ru</a><br>
+      <a href="https://vk.com/gazspecstroy" target="_blank"> ВКонтакте</a>
+    </div>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Строительство сетей газораспределения и газопотребления</h1>
+  </div>
+</section>
+
+<section class="gallery section">
+  <div class="container">
+    <h2></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/one.jpg" alt="Объект 1"></div>
+      <div class="gallery-item"><img src="images/two.jpg" alt="Объект 2"></div>
+      <img src="images/three.jpg" alt="Объект 3">
+      <img src="images/placeholder-object4.jpg" alt="">
+      <img src="images/placeholder-object5.jpg" alt="">
+      <img src="images/placeholder-object6.jpg" alt="">
+      <img src="images/placeholder-object7.jpg" alt="">
+      <img src="images/placeholder-object8.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="stats section">
+  <div class="container">
+    <h2></h2>
+    <div class="stats-grid">
+      <div class="stat"><h3>1000+</h3><p>Км газопроводов</p></div>
+      <div class="stat"><h3>250+</h3><p>Котельных</p></div>
+      <div class="stat"><h3>20+</h3><p>Регионов</p></div>
+      <div class="stat"><h3>15 лет</h3><p>Опыта</p></div>
+      <div class="stat"><h3>500+</h3><p>Сотрудников</p></div>
+      <div class="stat"><h3>300+</h3><p>Проектов</p></div>
+      <div class="stat"><h3>24/7</h3><p>Поддержка</p></div>
+      <div class="stat"><h3>99%</h3><p>Довольных клиентов</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="map-section" class="section">
+  <div class="container">
+    <h2></h2>
+    <div id="map" class="map"></div>
+  </div>
+</section>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContactModal()">×</span>
+    <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 909 796 90 15</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@example.com">rostmolchanov@mail.ru</a></p>
+    <p><strong>Адрес:</strong> Римская улица, 31</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© ГазСпецСтрой, 2025. Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</body>
+</html>
