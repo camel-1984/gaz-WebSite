@@ -19,3 +19,5 @@ window.addEventListener("click", function (e) {
     const modal = document.getElementById("contactModal");
     if (e.target === modal) modal.style.display = "none";
 });
+
+

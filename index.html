@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <title>ГазСпецСтрой</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <button class="floating-contact" onclick="openContactModal()">📞</button>
 <body>
 <header>
-  <div class="container header-flex">
-    <div class="logo">ГазСпецСтрой</div>
-
+  <div class="container header">
+    <div class="logo">
+      <img src="images/logo.png" alt="ГазСпецСтрой" class="logo-img">
+    </div>
     <nav>
       <ul>
         <li><a href="#">Главная</a></li>
@@ -46,7 +47,7 @@
     <div class="gallery-grid">
       <div class="gallery-item"><img src="images/one.jpg" alt="Объект 1"></div>
       <div class="gallery-item"><img src="images/two.jpg" alt="Объект 2"></div>
-      <img src="images/three.jpg" alt="Объект 3">
+      <div class="gallery-item"><img src="images/three.jpg" alt="Объект 3"></div>
       <img src="images/placeholder-object4.jpg" alt="">
       <img src="images/placeholder-object5.jpg" alt="">
       <img src="images/placeholder-object6.jpg" alt="">
@@ -60,15 +61,15 @@
   <div class="container">
     <h2></h2>
     <div class="stats-grid">
-      <div class="stat"><h3>1000+</h3><p>Км газопроводов</p></div>
-      <div class="stat"><h3>250+</h3><p>Котельных</p></div>
-      <div class="stat"><h3>20+</h3><p>Регионов</p></div>
+      <div class="stat"><h3 class="counter" data-target="1000">0</h3><p>Км газопроводов</p></div>
+      <div class="stat"><h3 class="counter" data-target="250">0</h3><p>Котельных</p></div>
+      <div class="stat"><h3 class="counter" data-target="20">0</h3><p>Регионов</p></div>
       <div class="stat"><h3>15 лет</h3><p>Опыта</p></div>
-      <div class="stat"><h3>500+</h3><p>Сотрудников</p></div>
-      <div class="stat"><h3>300+</h3><p>Проектов</p></div>
-      <div class="stat"><h3>24/7</h3><p>Поддержка</p></div>
-      <div class="stat"><h3>99%</h3><p>Довольных клиентов</p></div>
+      <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Сотрудников</p></div>
+      <div class="stat"><h3 class="counter" data-target="300">0</h3><p>Проектов</p></div>
     </div>
+
+
   </div>
 </section>
 
@@ -95,5 +96,47 @@
 </footer>
 
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+  const counters = document.querySelectorAll('.counter');
+  let triggered = false;
+
+  function animateCounters() {
+    if (triggered) return;
+    triggered = true;
+
+    counters.forEach(counter => {
+      const target = +counter.dataset.target;
+      let count = 0;
+
+      const step = Math.max(1, target / 100);
+
+      const update = () => {
+        if (count < target) {
+          count += step;
+          counter.innerText = Math.floor(count) + '+';
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+
+      update();
+    });
+  }
+
+  function isInViewport(elem) {
+    const rect = elem.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  }
+
+  window.addEventListener('scroll', () => {
+    const firstCounter = counters[0];
+    if (firstCounter && isInViewport(firstCounter)) {
+      animateCounters();
+    }
+  });
+</script>
+
+
 </body>
 </html>
