@@ -51,7 +51,9 @@
     display: block;
     width: 120px;
     height: 4px;
-    background-color: #ffcc00;
+    background-color: rgb(136
+    192
+    219);;
     margin: 12px auto 0;
     border-radius: 2px;
 }
@@ -153,8 +155,14 @@
     transition: border 0.3s;
 }
 
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+.fade-delay-1 { animation-delay: 0.3s; }
+
 .thumbnail-container img.active {
-    border-color: #ffcc00;
+    border-color: black;
 }
 
 /* Правая часть модалки */
@@ -167,7 +175,7 @@
 .modal-right h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #004f72;
+    color: black;
 }
 
 .modal-right ul {

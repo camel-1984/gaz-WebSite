@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
-    color: #222;
     scroll-behavior: smooth;
 }
 
@@ -31,7 +30,9 @@ h1, h2, h3 {
 
 .section-title {
     font-size: 1.8rem;
-    color: #003366;
+    color: rgb(64
+    64
+    64);
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 1px;
@@ -43,7 +44,9 @@ h1, h2, h3 {
     display: block;
     width: 120px;
     height: 4px;
-    background-color: #ffcc00;
+    background-color: rgb(136
+    192
+    219);
     margin: 12px auto 0;
     border-radius: 2px;
 }
@@ -57,9 +60,9 @@ h1, h2, h3 {
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 0.8rem;
     margin-bottom: 1rem;
+    color: rgb(64 64 64);
 }
 
 .logo img {
@@ -74,7 +77,9 @@ h1, h2, h3 {
 }
 
 .contacts a {
-    color: #004f72;
+    color: rgb( 64
+    64
+    64);
     text-decoration: none;
     margin-left: 0.5rem;
 }
@@ -93,7 +98,9 @@ nav ul {
     padding: 0;
 }
 nav a {
-    color: #004f72;
+    color: rgb( 64
+    64
+    64);
     text-decoration: none;
     font-weight: 500;
 }
@@ -183,6 +190,7 @@ nav a.active {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     transition: transform 0.3s;
+    color: rgb(0 0 0);
 }
 
 .stat:hover {
@@ -191,27 +199,10 @@ nav a.active {
 
 .stat h3 {
     font-size: 1.8rem;
-    color: #004f72;
+    color: rgb(136
+    192
+    219);
     margin-bottom: 0.5rem;
-}
-
-/* === Кнопка === */
-.btn-primary {
-    background: #ffa500;
-    color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    display: inline-block;
-}
-
-.btn-primary:hover {
-    background: #e69500;
-    transform: translateY(-2px);
 }
 
 /* === Карта === */
@@ -245,7 +236,9 @@ nav a.active {
 }
 
 .map-list a {
-    color: #004f72;
+    color: rgb( 64
+    64
+    64);
     text-decoration: none;
     font-weight: 500;
 }
@@ -281,7 +274,9 @@ nav a.active {
 }
 
 .modal-content a {
-    color: #004f72;
+    color: rgb( 64
+    64
+    64);
     text-decoration: none;
     font-weight: 500;
 }
@@ -290,12 +285,6 @@ nav a.active {
     text-decoration: underline;
 }
 
-
-.modal-content h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    color: #004f72;
-}
 
 .modal .close {
     position: absolute;
@@ -313,8 +302,9 @@ nav a.active {
     right: 20px;
     width: 48px;
     height: 48px;
-    background-color: #0099cc;
-    color: white;
+    background-color: rgb(136
+    192
+    219);
     border: none;
     font-size: 22px;
     font-weight: 600;
@@ -329,7 +319,7 @@ nav a.active {
 }
 
 .floating-contact:hover {
-    background-color: #007fa3;
+    transform: scale(1.08);
 }
 
 /* === Footer === */

@@ -2,14 +2,136 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Услуги | ГазСпецСтрой</title>
+  <title>Услуги — ГазСпецСтрой</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
-<header><a href="index.html">← На главную</a></header>
-<main class="section container">
-  <h1>Наши услуги</h1>
-  <p>Скоро здесь появится описание наших услуг.</p>
-</main>
+<div class="page-wrapper">
+  <!-- Плавающая кнопка -->
+  <button class="floating-contact" onclick="openContactModal()">📞</button>
+
+  <!-- Шапка -->
+  <header>
+    <div class="container header">
+      <div class="logo">
+<!--        <img src="images/logo.png" alt="ГазСпецСтрой">-->
+        <h1> ГазСпецСтрой</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html" class="active">Услуги</a></li>
+          <li><a href="about.html">Компания</a></li>
+          <li><a href="team.html">Сотрудники</a></li>
+          <li><a href="projects.html">Объекты</a></li>
+        </ul>
+      </nav>
+      <div class="contacts">
+        <a href="tel:+79097969015">+7 909 796 90 15</a><br>
+        <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
+        <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Контент и фон -->
+  <div class="page-background">
+    <main class="services-section">
+      <h2 class="section-title-services fade-up fade-delay-1">Наши услуги</h2>
+      <div class="services-grid container">
+        <div class="service-card" onclick="openServiceModal('service1')">
+          <img src="images/one.jpg" alt="Проектирование">
+          <p class="service-title">Строительство</p>
+        </div>
+        <div class="service-card" onclick="openServiceModal('service2')">
+          <img src="images/one.jpg" alt="Монтаж">
+          <p class="service-title">Проектирование</p>
+        </div>
+        <div class="service-card" onclick="openServiceModal('service3')">
+          <img src="images/one.jpg" alt="Обслуживание">
+          <p class="service-title">Монтаж</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer-minimal">
+      <div class="container">
+        <p>&copy; ГазСпецСтрой, 2003–2025. Все права защищены.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Модалка услуги -->
+<div class="service-modal" id="serviceModal">
+  <div class="service-modal-content">
+    <span class="service-modal-close" onclick="closeServiceModal()">&times;</span>
+    <h3 id="serviceTitle">Название услуги</h3>
+    <div id="serviceDescription"></div>
+  </div>
+</div>
+
+<!-- Модалка контактов -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContactModal()">×</span>
+    <p><strong>Телефон:</strong> <a href="tel:+79097969015">+7 909 796 90 15</a></p>
+    <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy" target="_blank">vk.com/gazspecstroy</a></p>
+  </div>
+</div>
+
+<!-- Скрипт -->
+<script>
+  const servicesData = {
+    service1: {
+      title: 'Строительство газопроводов',
+      description: `
+          <p>Мы разрабатываем проекты любой сложности: от частных объектов до крупных промышленных сооружений.</p>
+          <p>Учитываем нормативные требования, специфику местности и пожелания заказчика.</p>
+          <p>Работаем с современными CAD-системами и BIM-моделями.</p>
+        `
+    },
+    service2: {
+      title: 'Проектирование',
+      description: `
+          <p>Проводим монтаж инженерных сетей: газоснабжение, водоснабжение, отопление, вентиляция.</p>
+          <p>Команда опытных монтажников и технадзор на каждом этапе.</p>
+          <p>Сдача объекта точно в срок с минимальным вмешательством в эксплуатацию.</p>
+        `
+    },
+    service3: {
+      title: 'Монтаж котельных',
+      description: `
+          <p>Предлагаем абонентское и разовое техническое обслуживание установленных систем.</p>
+          <p>Реагирование в течение 24 часов, контроль безопасности и эффективность оборудования.</p>
+          <p>Гарантия на выполненные работы и консультации инженеров 24/7.</p>
+        `
+    }
+  };
+
+  function openServiceModal(key) {
+    const data = servicesData[key];
+    if (!data) return;
+    document.getElementById('serviceTitle').textContent = data.title;
+    document.getElementById('serviceDescription').innerHTML = data.description;
+
+    const modal = document.getElementById('serviceModal');
+    modal.style.display = 'flex';
+    setTimeout(() => modal.classList.add('show'), 10);
+  }
+
+  function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    modal.classList.remove('show');
+    setTimeout(() => modal.style.display = 'none', 400);
+  }
+</script>
 </body>
 </html>

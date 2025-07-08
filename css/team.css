@@ -17,7 +17,9 @@
     display: block;
     width: 120px;
     height: 4px;
-    background-color: #ffcc00;
+    background-color: rgb(136
+    192
+    219);
     margin: 12px auto 0;
     border-radius: 2px;
 }
