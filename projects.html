@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Объекты — ГазСпецСтрой</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+<!-- Плавающая кнопка -->
+<button class="floating-contact" onclick="openContactModal()">📞</button>
+
+<!-- Шапка -->
+<header>
+    <div class="container header">
+        <div class="logo">
+            <img src="images/logo.png" alt="ГазСпецСтрой">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="about.html">Компания</a></li>
+                <li><a href="team.html">Сотрудники</a></li>
+                <li><a href="projects.html" class="active">Объекты</a></li>
+            </ul>
+        </nav>
+        <div class="contacts">
+            <a href="tel:+79097969015">+7 909 796 90 15</a><br>
+            <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
+            <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
+        </div>
+    </div>
+</header>
+
+<div class="page-background">
+    <main class="projects-section">
+        <h2 class="section-title-project">Наши объекты</h2>
+        <div class="container gallery-grid">
+            <!-- Пример карточки с уникальным projectKey (повторяй с project2, project3 и т.д.) -->
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+            <div class="project-card" onclick="openProjectModal('project1')">
+                <img src="images/one.jpg" data-hover="images/two.jpg" alt="Объект 1">
+                <p class="project-title">Объект 1</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Модальное окно проекта -->
+<div class="project-modal" id="projectModal">
+    <div class="project-modal-content">
+        <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+
+        <div class="modal-left">
+            <div class="main-image-wrapper">
+                <img id="mainImage" src="" alt="Объект" onclick="openFullImage()">
+                <span id="fullscreenClose" class="fullscreen-exit" onclick="closeFullImage()">&times;</span>
+            </div>
+            <div class="thumbnail-container" id="thumbnailContainer"></div>
+        </div>
+
+        <div class="modal-right">
+            <h2 id="projectTitle">Объект</h2>
+            <div id="projectDescription"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer class="footer-minimal">
+    <div class="container">
+        <p>&copy; ГазСпецСтрой, 2003–2025. Все права защищены.</p>
+    </div>
+</footer>
+
+<!-- Модальное окно контактов -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeContactModal()">×</span>
+        <p><strong>Телефон:</strong> <a href="tel:+79097969015">+7 909 796 90 15</a></p>
+        <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+        <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy" target="_blank">vk.com/gazspecstroy</a></p>
+    </div>
+</div>
+
+<!-- Скрипты -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+    const lightbox = GLightbox({ touchNavigation: true, loop: true, zoomable: true });
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.project-card img').forEach(img => {
+            const hoverSrc = img.dataset.hover;
+            const originalSrc = img.src;
+            img.addEventListener('mouseenter', () => img.src = hoverSrc);
+            img.addEventListener('mouseleave', () => img.src = originalSrc);
+        });
+    });
+</script>
+<script>
+    const projectsData = {
+        project1: {
+            title: 'Объект 1',
+            description: `
+                <h3>Назначение объекта</h3>
+                <p>Газификация жилого сектора — проект направлен на обеспечение частных домов автономным газоснабжением.</p>
+                <h3>Выполненные работы</h3>
+                <ul>
+                    <li>Установлено 4 котельных блока</li>
+                    <li>Проведено более 800 м трубопровода</li>
+                    <li>Монтаж системы автоматического контроля</li>
+                </ul>
+                <h3>Характеристики</h3>
+                <ul>
+                    <li>Площадь объекта: 1200 м²</li>
+                    <li>Подключено: 48 жилых домов</li>
+                    <li>Срок реализации: 3 месяца</li>
+                </ul>
+                <h3>Местоположение и дата</h3>
+                <p>Калининградская область, март — июнь 2024 года.</p>
+            `,
+            images: [
+                'images/one.jpg',
+                'images/two.jpg',
+                'images/three.jpg'
+            ]
+        }
+    };
+
+    let currentProject = null;
+    let currentImageIndex = 0;
+
+    function openProjectModal(projectKey) {
+        const data = projectsData[projectKey];
+        if (!data) return;
+        currentProject = data;
+        currentImageIndex = 0;
+        document.getElementById('projectTitle').textContent = data.title;
+        document.getElementById('projectDescription').innerHTML = data.description;
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = data.images[0];
+        mainImage.dataset.current = data.images[0];
+
+        const container = document.getElementById('thumbnailContainer');
+        container.innerHTML = '';
+        data.images.forEach((src, idx) => {
+            const thumb = document.createElement('img');
+            thumb.src = src;
+            if (idx === 0) thumb.classList.add('active');
+            thumb.onclick = () => switchImageWithFade(idx);
+            container.appendChild(thumb);
+        });
+
+        const modal = document.getElementById('projectModal');
+        modal.style.display = 'flex';
+        setTimeout(() => modal.classList.add('show'), 10);
+    }
+
+    function closeProjectModal() {
+        const modal = document.getElementById('projectModal');
+        modal.classList.remove('show');
+        setTimeout(() => modal.style.display = 'none', 400);
+    }
+
+    function switchImageWithFade(index) {
+        const img = document.getElementById('mainImage');
+        const newSrc = currentProject.images[index];
+        currentImageIndex = index;
+        img.classList.add('fade');
+        setTimeout(() => {
+            img.src = newSrc;
+            img.dataset.current = newSrc;
+            img.classList.remove('fade');
+            document.querySelectorAll('#thumbnailContainer img').forEach((img, idx) => {
+                img.classList.toggle('active', idx === index);
+            });
+        }, 200);
+    }
+
+    function openFullImage() {
+        const img = document.getElementById('mainImage');
+        const closeBtn = document.getElementById('fullscreenClose');
+        if (img.requestFullscreen) img.requestFullscreen();
+        else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+        else if (img.msRequestFullscreen) img.msRequestFullscreen();
+        setTimeout(() => closeBtn.style.display = 'block', 200);
+    }
+
+    function closeFullImage() {
+        const closeBtn = document.getElementById('fullscreenClose');
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        else if (document.msExitFullscreen) document.msExitFullscreen();
+        closeBtn.style.display = 'none';
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+            document.getElementById('fullscreenClose').style.display = 'none';
+        }
+    });
+
+    window.addEventListener('click', e => {
+        const modal = document.getElementById('projectModal');
+        const content = document.querySelector('.project-modal-content');
+        if (e.target === modal && !content.contains(e.target)) {
+            closeProjectModal();
+        }
+    });
+</script>
+</body>
+</html>

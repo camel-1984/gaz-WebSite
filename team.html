@@ -9,8 +9,12 @@
   <script src="js/main.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<button class="floating-contact" onclick="openContactModal()">📞</button>
 <body>
+
+<!-- Плавающая кнопка -->
+<button class="floating-contact" onclick="openContactModal()">📞</button>
+
+<!-- Шапка -->
 <header>
   <div class="container header">
     <div class="logo">
@@ -32,83 +36,92 @@
     </div>
   </div>
 </header>
+
+<!-- Фоновый блок -->
 <div class="page-background">
 
+  <!-- Секция сотрудники -->
+  <section class="section team-slider">
+    <div class="container slider-layout">
 
-<section class="section team-slider">
-  <div class="container slider-layout">
-    <div class="team-text">
-      <h1>Наша команда</h1>
-      <p>Компания ГазСпецСтрой — это коллектив из более чем 50 профессионалов, обладающих профильным образованием и многолетним опытом. Наши специалисты занимаются проектированием, строительством и эксплуатацией инженерных систем по всей стране.</p>
+      <!-- Левая часть — текст -->
+      <div class="team-text">
+        <h1 class="team-title fade-up fade-delay-1">Наша команда</h1>
+        <p class="fade-up fade-delay-2">
+          Компания «ГазСпецСтрой» — это коллектив из более чем 50 профессионалов с профильным образованием и многолетним опытом.
+          Наши специалисты проектируют, строят и сопровождают инженерные системы по всей стране.
+        </p>
+      </div>
+
+      <!-- Правая часть — карусель -->
+      <div class="team-carousel">
+        <div class="team-slide active">
+          <img src="images/eight.jpg" alt="Андрей Молчанов">
+          <div class="caption">
+            <h3>Андрей Молчанов</h3>
+            <p>Генеральный директор</p>
+          </div>
+        </div>
+        <div class="team-slide">
+          <img src="images/one1.jpg" alt="Нина Лукашонок">
+          <div class="caption">
+            <h3>Нина Лукашонок</h3>
+            <p>Главный инженер-проектировщик</p>
+          </div>
+        </div>
+        <div class="team-slide">
+          <img src="images/two2.jpg" alt="Михаил Сигеев">
+          <div class="caption">
+            <h3>Михаил Сигеев</h3>
+            <p>Начальник производственного участка</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div class="team-carousel">
-      <div class="team-slide">
-        <img src="images/people_01.jpg" alt="Андрей Молчанов">
-        <div class="caption">
-          <h3>Андрей Молчанов</h3>
-          <p>Генеральный директор</p>
-        </div>
-      </div>
-      <div class="team-slide">
-        <img src="images/people_02.jpg" alt="Нина Лукашонок">
-        <div class="caption">
-          <h3>Нина Лукашонок</h3>
-          <p>Главный инженер-проектировщик</p>
-        </div>
-      </div>
-      <div class="team-slide">
-        <img src="images/people_03.jpg" alt="Михаил Сигеев">
-        <div class="caption">
-          <h3>Михаил Сигеев</h3>
-          <p>Начальник производственного участка</p>
-        </div>
-      </div>
-      <!-- Добавь других сотрудников по аналогии -->
-    </div>
-  </div>
-</section>
-
-
-
-
+  </section>
 
 </div>
 
-<footer class="footer">
+<!-- Подвал -->
+<footer class="footer-minimal">
   <div class="container">
-    <p>© ГазСпецСтрой, 2003–2025. Все права защищены.</p>
+    <p>&copy; ГазСпецСтрой, 2003–2025. Все права защищены.</p>
   </div>
 </footer>
 
+<!-- Модальное окно -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeContactModal()">×</span>
-    <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 909 796 90 15</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@example.com">rostmolchanov@mail.ru</a></p>
-    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy">https://vk.com/gazspecstroy</a></p>
+    <p><strong>Телефон:</strong> <a href="tel:+79097969015">+7 909 796 90 15</a></p>
+    <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy" target="_blank">vk.com/gazspecstroy</a></p>
   </div>
 </div>
 
-
-
+<!-- Скрипт карусели -->
 <script>
-  // Простой карусельный скрипт (прокрутка по таймеру)
-  let index = 0;
-  const slides = document.querySelectorAll('.team-slide');
-  function showSlide(i) {
-    slides.forEach((slide, idx) => {
-      slide.style.display = (idx === i) ? 'block' : 'none';
-    });
-  }
-  function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  }
-  setInterval(nextSlide, 5000);
-  window.addEventListener('DOMContentLoaded', () => showSlide(index));
-</script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.team-slide');
+    let index = 0;
 
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    if (slides.length > 0) {
+      showSlide(index);
+      setInterval(nextSlide, 5000);
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -4,103 +4,138 @@
   <meta charset="UTF-8">
   <title>ГазСпецСтрой</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Стили и шрифты -->
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Скрипты -->
+  <script src="js/main.js" defer></script>
 </head>
-<button class="floating-contact" onclick="openContactModal()">📞</button>
+
 <body>
+
+<!-- Плавающая кнопка -->
+<button class="floating-contact" onclick="openContactModal()">📞</button>
+
+<!-- Header -->
 <header>
   <div class="container header">
     <div class="logo">
-      <img src="images/logo.png" alt="ГазСпецСтрой" class="logo-img">
+      <img src="images/logo.png" alt="Логотип ГазСпецСтрой" class="logo-img">
     </div>
+
     <nav>
       <ul>
-        <li><a href="#">Главная</a></li>
+        <li><a href="#" class="active">Главная</a></li>
         <li><a href="services.html">Услуги</a></li>
         <li><a href="about.html">Компания</a></li>
         <li><a href="team.html">Сотрудники</a></li>
         <li><a href="projects.html">Объекты</a></li>
-
       </ul>
     </nav>
 
     <div class="contacts">
-      <a href="tel:+70000000000"> +7 909 796 90 15</a><br>
-      <a href="mailto:info@example.com"> rostmolchanov@mail.ru</a><br>
-      <a href="https://vk.com/gazspecstroy" target="_blank"> ВКонтакте</a>
+      <a href="tel:+79097969015">+7 909 796 90 15</a><br>
+      <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
+      <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
     </div>
   </div>
 </header>
 
+<!-- Главный контент -->
+<main>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Строительство сетей газораспределения и газопотребления</h1>
-    <h1>Проектируем, возводим, обслуживаем с 2003 года</h1>
-<!--    <button class="btn-primary" onclick="openContactModal()">Связаться с нами</button>-->
-  </div>
-</section>
-
-<section class="gallery section">
-  <div class="container">
-    <h2></h2>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/one.jpg" alt="Объект 1"></div>
-      <div class="gallery-item"><img src="images/two.jpg" alt="Объект 2"></div>
-      <div class="gallery-item"><img src="images/three.jpg" alt="Объект 3"></div>
-      <div class="gallery-item"><img src="images/four.jpg" alt="Объект 4"></div>
-      <div class="gallery-item"><img src="images/five.jpg" alt="Объект 5"></div>
-      <div class="gallery-item"><img src="images/six.jpg" alt="Объект 6"></div>
-      <div class="gallery-item"><img src="images/seven.jpg" alt="Объект 7"></div>
-      <div class="gallery-item"><img src="images/eight.jpg" alt="Объект 8"></div>
-
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Строительство сетей газораспределения и газопотребления</h1>
+      <h1>Проектируем, возводим, обслуживаем с 2003 года</h1>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="stats section">
-  <div class="container">
-    <h2></h2>
-    <div class="stats-grid">
-      <div class="stat"><h3 class="counter" data-target="1000">0</h3><p>Км газопроводов</p></div>
-      <div class="stat"><h3 class="counter" data-target="250">0</h3><p>Котельных</p></div>
-      <div class="stat"><h3 class="counter" data-target="20">0</h3><p>Регионов</p></div>
-      <div class="stat"><h3>15 лет</h3><p>Опыта</p></div>
-      <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Сотрудников</p></div>
-      <div class="stat"><h3 class="counter" data-target="300">0</h3><p>Проектов</p></div>
+  <!-- Галерея -->
+  <section class="gallery section">
+    <div class="container">
+      <h2 class="section-title">Наша галерея</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/one.jpg" alt="Объект 1"></div>
+        <div class="gallery-item"><img src="images/two.jpg" alt="Объект 2"></div>
+        <div class="gallery-item"><img src="images/three.jpg" alt="Объект 3"></div>
+        <div class="gallery-item"><img src="images/four.jpg" alt="Объект 4"></div>
+        <div class="gallery-item"><img src="images/five.jpg" alt="Объект 5"></div>
+        <div class="gallery-item"><img src="images/six.jpg" alt="Объект 6"></div>
+        <div class="gallery-item"><img src="images/seven.jpg" alt="Объект 7"></div>
+        <div class="gallery-item"><img src="images/eight.jpg" alt="Объект 8"></div>
+      </div>
     </div>
+  </section>
+
+  <!-- Цифры -->
+  <section class="stats section">
+    <div class="container">
+      <h2 class="section-title">«ГазСпецСтрой» в цифрах</h2>
+      <div class="stats-grid">
+        <div class="stat"><h3 class="counter" data-target="1000">0</h3><p>Км газопроводов</p></div>
+        <div class="stat"><h3 class="counter" data-target="250">0</h3><p>Котельных</p></div>
+        <div class="stat"><h3 class="counter" data-target="20">0</h3><p>Регионов</p></div>
+        <div class="stat"><h3>15 лет</h3><p>Опыта</p></div>
+        <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Сотрудников</p></div>
+        <div class="stat"><h3 class="counter" data-target="300">0</h3><p>Проектов</p></div>
+      </div>
+    </div>
+  </section>
 
 
-  </div>
-</section>
+  <!-- Карта -->
+  <section id="map-section" class="section">
+    <div class="container map-wrapper">
+      <h2 class="section-title">География проектов</h2>
 
-<section id="map-section" class="section">
-  <div class="container">
-    <h2></h2>
-    <div id="map" class="map"></div>
-  </div>
-</section>
+      <div class="map-content">
+        <!-- Центрированный список -->
+        <div class="map-list centered-list">
+          <ul>
+            <li><a href="https://yandex.ru/maps/?text=Калининград, ул. Римская 31" target="_blank">Калининград, ул. Римская 31</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Гурьевск, проспект Ленина 10" target="_blank">Гурьевск, проспект Ленина 10</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Светлогорск, ул. Центральная 5" target="_blank">Светлогорск, ул. Центральная 5</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Балтийск, Морская 3" target="_blank">Балтийск, ул. Морская 3</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Черняховск, Победы 11" target="_blank">Черняховск, ул. Победы 11</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Советск, Трудовая 18" target="_blank">Советск, ул. Трудовая 18</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Пионерский, Набережная 7" target="_blank">Пионерский, ул. Набережная 7</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Гусев, Пушкина 40" target="_blank">Гусев, ул. Пушкина 40</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Гусев, Пушкина 40" target="_blank">Гусев, ул. Пушкина 40</a></li>
+            <li><a href="https://yandex.ru/maps/?text=Гусев, Пушкина 40" target="_blank">Гусев, ул. Пушкина 40</a></li>
+          </ul>
+        </div>
 
+        <!-- Карта -->
+        <div id="map" class="map-square"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Модальное окно -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeContactModal()">×</span>
-    <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 909 796 90 15</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@example.com">rostmolchanov@mail.ru</a></p>
-    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy">https://vk.com/gazspecstroy</a></p>
+    <p><strong>Телефон:</strong> <a href="tel:+79097969015">+7 909 796 90 15</a></p>
+    <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+    <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy" target="_blank">vk.com/gazspecstroy</a></p>
   </div>
 </div>
 
-<footer>
-  <div class="container footer-address">
-    <p>236016, г. Калининград, ул. Римская, 31</p>
+<!-- Подвал -->
+<footer class="footer-minimal">
+  <div class="container">
+    <p>&copy; ГазСпецСтрой, 2003–2025. Все права защищены.</p>
   </div>
 </footer>
 
 
-
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<!-- Скрипт для счетчиков -->
 <script>
   const counters = document.querySelectorAll('.counter');
   let triggered = false;
@@ -112,7 +147,6 @@
     counters.forEach(counter => {
       const target = +counter.dataset.target;
       let count = 0;
-
       const step = Math.max(1, target / 100);
 
       const update = () => {
@@ -124,7 +158,6 @@
           counter.innerText = target + '+';
         }
       };
-
       update();
     });
   }
@@ -142,6 +175,8 @@
   });
 </script>
 
+<!-- Внешние библиотеки -->
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script src="https://unpkg.com/@barba/core"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 

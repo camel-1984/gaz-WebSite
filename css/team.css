@@ -1,3 +1,4 @@
+/* ======= Лейаут ======= */
 .slider-layout {
     display: flex;
     flex-wrap: wrap;
@@ -6,59 +7,104 @@
     gap: 2rem;
 }
 
+/* ======= Заголовок ======= */
+.team-title {
+    font-size: 2rem;
+    color: white;
+}
+.team-title::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ======= Текст ======= */
 .team-text {
     font-size: 1.5rem;
     flex: 1;
-    min-width: 300px;
     color: white;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
+/* ======= Карусель ======= */
 .team-carousel {
     flex: 1;
     min-width: 300px;
+    min-height: 460px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
 .team-slide {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s ease-in-out;
     text-align: center;
-    transition: opacity 0.5s ease;
+}
+
+.team-slide.active {
+    opacity: 1;
+    z-index: 1;
+    position: relative;
 }
 
 .team-slide img {
     width: 100%;
     max-width: 400px;
+    height: 530px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 
-
+/* ======= Подпись ======= */
 .caption {
     margin-top: 1rem;
 }
-
 .caption h3 {
     margin-bottom: 0.2rem;
 }
 
+/* ======= Анимация появления текста ======= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+.fade-delay-1 { animation-delay: 0.3s; }
+.fade-delay-2 { animation-delay: 0.6s; }
 
 
-
+/* ======= Фоновый блок страницы ======= */
 .page-background {
     background:
             linear-gradient(rgba(0, 60, 90, 0.6), rgba(0, 80, 120, 0.6)),
             url('../images/main2.jpg') center center / cover no-repeat;
     color: white;
-    padding: 8rem 1.5rem 3rem;
+    padding: 4.5rem 1.5rem 3rem;
     text-align: center;
     position: relative;
-}
-
-.footer {
-    text-align: center;
-    color: #004f72;
-    font-size: 0.8rem;
-    font-weight: 500;
 }

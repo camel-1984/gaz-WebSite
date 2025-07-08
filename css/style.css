@@ -1,4 +1,5 @@
-@font-face{
+/* === Шрифт === */
+@font-face {
     font-family: 'gothambold';
     src: url('../fonts/gothaprobol.eot');
     src: url('../fonts/gothaprobol.eot?#iefix') format('embedded-opentype'),
@@ -7,20 +8,7 @@
     url('../fonts/gothaprobol.svg#webfont') format('svg');
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 768px) {
-    .gallery-grid, .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-}
-
+/* === Общие стили === */
 body {
     font-family: 'gothambold', sans-serif;
     margin: 0;
@@ -30,64 +18,82 @@ body {
     scroll-behavior: smooth;
 }
 
+h1, h2, h3 {
+    margin-bottom: 0.5rem;
+}
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.section {
-    padding: 2.5rem 0;
+    padding: 0 1rem;
 }
 
-h1, h2, h3 {
-    margin-bottom: 0.5rem;
+.section-title {
+    font-size: 1.8rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    position: relative;
 }
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* === Header / Navigation === */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .logo {
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
 .logo img {
     height: 60px;
     display: block;
 }
-
 
 .contacts {
     text-align: right;
     font-size: 0.9rem;
     line-height: 1.4;
 }
+
 .contacts a {
     color: #004f72;
     text-decoration: none;
-    display: inline-block;
     margin-left: 0.5rem;
 }
-.contacts a:hover {
+a:hover {
     text-decoration: underline;
+
 }
 
-
+/* === Nav === */
 nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-bottom: 0.2rem;
+    margin: 0;
     padding: 0;
 }
 nav a {
-    color: #004f72;;
+    color: #004f72;
     text-decoration: none;
     font-weight: 500;
 }
@@ -96,49 +102,39 @@ nav a:hover {
     text-decoration: underline;
 }
 
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 6px;
-}
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-.gallery-item:hover img {
-    transform: scale(1.08);
+nav a.active {
+    font-weight: 700;
 }
 
+/* === Hero === */
 .hero {
-    background:
-            linear-gradient(rgba(0, 60, 90, 0.6), rgba(0, 80, 120, 0.6)),
-            url('../images/main2.jpg') center center / cover no-repeat;
+    background: linear-gradient(rgba(0,60,90,0.6), rgba(0,80,120,0.6)),
+    url('../images/main2.jpg') center/cover no-repeat;
     color: white;
     padding: 8rem 1.5rem 6rem;
     text-align: center;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 0.75rem;
 }
-.hero-content h1, .hero-content p {
+
+.hero-content h1,
+.hero-content p {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s ease forwards;
 }
 
-.hero-content h1 {
-    animation-delay: 0.2s;
-}
-
+.hero-content h1 { animation-delay: 0.2s; }
 .hero-content p:nth-of-type(1) { animation-delay: 0.6s; }
 .hero-content p:nth-of-type(2) { animation-delay: 1s; }
 .hero-content p:nth-of-type(3) { animation-delay: 1.4s; }
 
+/* === Анимации === */
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -146,29 +142,41 @@ nav a:hover {
     }
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
 
-
-.gallery-grid, .stats-grid {
+/* === Галерея === */
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 0.1rem;
 }
-.gallery-grid img {
+
+.gallery-grid img,
+.gallery-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 6px;
+    transition: transform 0.4s ease;
 }
 
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
 
+/* === Статистика === */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 0.1rem;
     text-align: center;
+    margin-top: 0.1rem;
 }
+
 .stat {
     background: #f2f2f2;
     padding: 1.5rem;
@@ -176,33 +184,92 @@ nav a:hover {
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     transition: transform 0.3s;
 }
+
 .stat:hover {
     transform: translateY(-5px);
 }
+
 .stat h3 {
     font-size: 1.8rem;
     color: #004f72;
     margin-bottom: 0.5rem;
 }
 
+/* === Кнопка === */
+.btn-primary {
+    background: #ffa500;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
 
-.map {
-    width: 100%;
+.btn-primary:hover {
+    background: #e69500;
+    transform: translateY(-2px);
+}
+
+/* === Карта === */
+.map-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.map-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* <-- ключ для вертикального выравнивания */
+    flex-wrap: wrap;
+}
+
+.map-list {
+    flex: 1 1 300px;
+    max-width: 400px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.map-list ul {
+    padding-left: 1.2rem;
+    list-style: disc;
+    margin: 0;
+}
+
+.map-list li {
+    margin-bottom: 0.75rem;
+}
+
+.map-list a {
+    color: #004f72;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.map-list a:hover {
+    text-decoration: underline;
+}
+
+.map-square {
+    flex: 1 1 500px;
     height: 500px;
-    margin-top: 0.1rem;
     border-radius: 10px;
     overflow: hidden;
 }
 
-
+/* === Модальное окно === */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.6);
 }
+
 .modal-content {
     background: #fff;
     padding: 2rem;
@@ -212,11 +279,24 @@ nav a:hover {
     position: relative;
     animation: fadeIn 0.4s ease;
 }
+
+.modal-content a {
+    color: #004f72;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+
 .modal-content h3 {
     margin-top: 0;
     font-size: 1.4rem;
     color: #004f72;
 }
+
 .modal .close {
     position: absolute;
     top: 10px;
@@ -225,6 +305,8 @@ nav a:hover {
     cursor: pointer;
     color: #888;
 }
+
+/* === Плавающая кнопка === */
 .floating-contact {
     position: fixed;
     bottom: 20px;
@@ -245,38 +327,21 @@ nav a:hover {
     justify-content: center;
     transition: background 0.3s ease;
 }
+
 .floating-contact:hover {
-    background-color: #0099cc;
+    background-color: #007fa3;
 }
 
-.footer-address {
+/* === Footer === */
+.footer-minimal {
+    background-color: #f2f2f2;
+    padding: 1rem 0;
+    font-size: 0.9rem;
     text-align: center;
-    padding: 2rem 1rem;
-    color: #004f72;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.6;
+    color: #555;
 }
 
-
-
-
-
-
-.btn-primary {
-    background: #ffa500;
-    color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    display: inline-block;
+.footer-minimal p {
+    margin: 0;
 }
 
-.btn-primary:hover {
-    background: #e69500;
-    transform: translateY(-2px);
-}
