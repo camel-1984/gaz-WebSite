@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/services.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="js/main.js" defer></script>
 </head>
 
@@ -32,29 +33,38 @@
         </ul>
       </nav>
       <div class="contacts">
-        <a href="tel:+79097969015">+7 909 796 90 15</a><br>
-        <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
-        <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
+        <a href="https://wa.me/79097969015" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/yourtelegramusername" target="_blank" title="Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://vk.com/gazspecstroy" target="_blank" title="ВКонтакте">
+          <i class="fab fa-vk"></i>
+        </a>
+        <a href="mailto:rostmolchanov@mail.ru" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
     </div>
   </header>
 
   <!-- Контент и фон -->
-  <div class="page-background">
+  <div class="page-background-services">
     <main class="services-section">
       <h2 class="section-title-services fade-up fade-delay-1">Наши услуги</h2>
       <div class="services-grid container">
         <div class="service-card" onclick="openServiceModal('service1')">
-          <img src="images/one.jpg" alt="Проектирование">
+          <img src="images/service_one.jpg" alt="Строительство">
           <p class="service-title">Строительство</p>
         </div>
         <div class="service-card" onclick="openServiceModal('service2')">
-          <img src="images/one.jpg" alt="Монтаж">
-          <p class="service-title">Проектирование</p>
+          <img src="images/service_two.jpg" alt="Монтаж">
+          <p class="service-title">Монтаж</p>
         </div>
         <div class="service-card" onclick="openServiceModal('service3')">
-          <img src="images/one.jpg" alt="Обслуживание">
-          <p class="service-title">Монтаж</p>
+          <img src="images/service_three.jpg" alt="Проектирование">
+          <p class="service-title">Проектирование</p>
         </div>
       </div>
     </main>
@@ -91,14 +101,14 @@
 <script>
   const servicesData = {
     service1: {
-      title: 'Строительство газопроводов',
+      title: 'Строительство',
       description: `
           <p>Мы разрабатываем проекты любой сложности: от частных объектов до крупных промышленных сооружений.</p>
           <p>Учитываем нормативные требования, специфику местности и пожелания заказчика.</p>
           <p>Работаем с современными CAD-системами и BIM-моделями.</p>
         `
     },
-    service2: {
+    service3: {
       title: 'Проектирование',
       description: `
           <p>Проводим монтаж инженерных сетей: газоснабжение, водоснабжение, отопление, вентиляция.</p>
@@ -106,8 +116,8 @@
           <p>Сдача объекта точно в срок с минимальным вмешательством в эксплуатацию.</p>
         `
     },
-    service3: {
-      title: 'Монтаж котельных',
+    service2: {
+      title: 'Монтаж',
       description: `
           <p>Предлагаем абонентское и разовое техническое обслуживание установленных систем.</p>
           <p>Реагирование в течение 24 часов, контроль безопасности и эффективность оборудования.</p>

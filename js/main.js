@@ -27,11 +27,41 @@ function init() {
 
 
 function openContactModal() {
-    document.getElementById("contactModal").style.display = "block";
+    const modal = document.getElementById("contactModal");
+    const content = modal.querySelector(".modal-content");
+
+    modal.classList.remove("fade-out");
+    content.classList.remove("fade-out");
+
+    modal.style.display = "block";
+
+    // Немного подождём, чтобы применить анимации
+    setTimeout(() => {
+        modal.classList.add("fade-in");
+        content.classList.add("fade-in");
+    }, 10);
 }
+
 function closeContactModal() {
-    document.getElementById("contactModal").style.display = "none";
+    const modal = document.getElementById("contactModal");
+    const content = modal.querySelector(".modal-content");
+
+    // Убираем классы появления и добавляем анимацию закрытия
+    modal.classList.remove("fade-in");
+    content.classList.remove("fade-in");
+
+    modal.classList.add("fade-out");
+    content.classList.add("fade-out");
+
+    // Скрываем модалку после завершения анимации
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300); // это 0.3s — соответствует CSS
 }
+
+
+
+
 window.addEventListener("click", function (e) {
     const modal = document.getElementById("contactModal");
     if (e.target === modal) modal.style.display = "none";

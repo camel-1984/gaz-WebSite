@@ -8,6 +8,7 @@
   <!-- Стили и шрифты -->
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Скрипты -->
   <script src="js/main.js" defer></script>
@@ -36,11 +37,21 @@
     </nav>
 
     <div class="contacts">
-      <a href="tel:+79097969015">+7 909 796 90 15</a><br>
-      <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a><br>
-      <a href="https://vk.com/gazspecstroy" target="_blank">ВКонтакте</a>
+      <a href="https://wa.me/79097969015" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://t.me/yourtelegramusername" target="_blank" title="Telegram">
+        <i class="fab fa-telegram"></i>
+      </a>
+      <a href="https://vk.com/gazspecstroy" target="_blank" title="ВКонтакте">
+        <i class="fab fa-vk"></i>
+      </a>
+      <a href="mailto:rostmolchanov@mail.ru" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
   </div>
+
 </header>
 
 <!-- Главный контент -->
@@ -54,19 +65,20 @@
     </div>
   </section>
 
+
   <!-- Галерея -->
   <section class="gallery section">
     <div class="container">
       <h2 class="section-title">Наша галерея</h2>
       <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/one.jpg" alt="Объект 1"></div>
-        <div class="gallery-item"><img src="images/two.jpg" alt="Объект 2"></div>
-        <div class="gallery-item"><img src="images/three.jpg" alt="Объект 3"></div>
-        <div class="gallery-item"><img src="images/four.jpg" alt="Объект 4"></div>
-        <div class="gallery-item"><img src="images/five.jpg" alt="Объект 5"></div>
-        <div class="gallery-item"><img src="images/six.jpg" alt="Объект 6"></div>
-        <div class="gallery-item"><img src="images/seven.jpg" alt="Объект 7"></div>
-        <div class="gallery-item"><img src="images/eight.jpg" alt="Объект 8"></div>
+        <div class="gallery-item"><img src="images/galOne.jpg" alt="Объект 1"></div>
+        <div class="gallery-item"><img src="images/galFive.jpg" alt="Объект 2"></div>
+        <div class="gallery-item"><img src="images/galThree.jpg" alt="Объект 3"></div>
+        <div class="gallery-item"><img src="images/galFour.jpg" alt="Объект 4"></div>
+        <div class="gallery-item"><img src="images/galTwo.jpg" alt="Объект 5"></div>
+        <div class="gallery-item"><img src="images/galSeven.jpg" alt="Объект 6"></div>
+        <div class="gallery-item"><img src="images/galSix.JPG" alt="Объект 7"></div>
+        <div class="gallery-item"><img src="images/galEight.jpg" alt="Объект 8"></div>
       </div>
     </div>
   </section>
@@ -121,11 +133,25 @@
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeContactModal()">×</span>
+
     <p><strong>Телефон:</strong> <a href="tel:+79097969015">+7 909 796 90 15</a></p>
-    <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/79097969015" target="_blank">Написать в WhatsApp</a></p>
+
+    <p><strong>Telegram:</strong> <a href="https://t.me/your_telegram_username" target="_blank">@your_telegram_username</a></p>
+
     <p><strong>ВКонтакте:</strong> <a href="https://vk.com/gazspecstroy" target="_blank">vk.com/gazspecstroy</a></p>
+
+    <p><strong>Email:</strong> <a href="mailto:rostmolchanov@mail.ru">rostmolchanov@mail.ru</a></p>
+
+    <p><strong>Адрес:</strong>
+      <a href="https://yandex.ru/maps/?text=Москва, Примерная 12" target="_blank">
+        г. Москва, ул. Примерная, д. 12
+      </a>
+    </p>
   </div>
 </div>
+
 
 <!-- Подвал -->
 <footer class="footer-minimal">

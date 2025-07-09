@@ -21,20 +21,25 @@
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid #ccc;
+    border: 5px solid #ccc;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: 0.3s ease;
     box-sizing: border-box;
+}
+
+.project-card img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    border-color: rgb(136
+    192
+    219);
 }
 
 .project-title {
     margin-top: 0.5rem;
     font-weight: 500;
     color: white;
-}
-
-.project-title:hover {
-    text-decoration: underline;
+    font-size: 1.4rem;
 }
 
 /* ===== Заголовок секции ===== */
@@ -53,20 +58,24 @@
     height: 4px;
     background-color: rgb(136
     192
-    219);;
+    219);
     margin: 12px auto 0;
     border-radius: 2px;
 }
 
 /* ===== Фон страницы ===== */
 .page-background {
-    background: linear-gradient(rgba(0, 60, 90, 0.6), rgba(0, 80, 120, 0.6)),
-    url('../images/main2.jpg') center center / cover no-repeat;
+    background-image:
+            linear-gradient(rgba(30, 30, 30, 0.7), rgba(50, 50, 50, 0.8)),
+            url('../images/back2.jpg');
     color: white;
     padding: 1rem 1.5rem 3rem;
     text-align: center;
+    background-size: cover;
     position: relative;
 }
+
+
 
 /* ===== Модальное окно проекта ===== */
 .project-modal {
@@ -116,7 +125,6 @@
 .main-image-wrapper {
     width: 560px;
     height: 560px;
-    overflow: hidden;
     border-radius: 12px;
     position: relative;
 }
@@ -127,7 +135,9 @@
     object-fit: cover;
     cursor: pointer;
     border-radius: 12px;
-    border: 2px solid #ccc;
+    border: 6px solid rgb(136
+    192
+    219);
     transition: opacity 0.4s ease;
 }
 
@@ -140,9 +150,10 @@
 .thumbnail-container {
     display: flex;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+
 }
 
 .thumbnail-container img {
@@ -162,7 +173,11 @@
 .fade-delay-1 { animation-delay: 0.3s; }
 
 .thumbnail-container img.active {
-    border-color: black;
+    border: 6px solid rgb(136
+    192
+    219);
+
+
 }
 
 /* Правая часть модалки */

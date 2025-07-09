@@ -8,6 +8,8 @@
     url('../fonts/gothaprobol.svg#webfont') format('svg');
 }
 
+
+
 /* === Общие стили === */
 body {
     font-family: 'gothambold', sans-serif;
@@ -71,22 +73,21 @@ h1, h2, h3 {
 }
 
 .contacts {
-    text-align: right;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .contacts a {
-    color: rgb( 64
-    64
-    64);
-    text-decoration: none;
-    margin-left: 0.5rem;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
 }
-a:hover {
-    text-decoration: underline;
 
+.contacts a:hover {
+    color: #007bff;
 }
+
 
 /* === Nav === */
 nav ul {
@@ -116,7 +117,7 @@ nav a.active {
 /* === Hero === */
 .hero {
     background: linear-gradient(rgba(0,60,90,0.6), rgba(0,80,120,0.6)),
-    url('../images/main2.jpg') center/cover no-repeat;
+    url('../images/main.jpg') center/cover no-repeat;
     color: white;
     padding: 8rem 1.5rem 6rem;
     text-align: center;
@@ -231,6 +232,14 @@ nav a.active {
     margin: 0;
 }
 
+.map-list li::marker {
+    color: rgb(136
+    192
+    219); ; /* выбери нужный цвет */
+    font-size: 1.2em; /* опционально — размер точки */
+}
+
+
 .map-list li {
     margin-bottom: 0.75rem;
 }
@@ -261,6 +270,8 @@ nav a.active {
     z-index: 1000;
     inset: 0;
     background: rgba(0,0,0,0.6);
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
 .modal-content {
@@ -270,7 +281,25 @@ nav a.active {
     margin: 10% auto;
     border-radius: 10px;
     position: relative;
-    animation: fadeIn 0.4s ease;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* ==== Классы появления и скрытия ==== */
+.modal.fade-in {
+    animation-name: fadeInModal;
+}
+
+.modal.fade-out {
+    animation-name: fadeOutModal;
+}
+
+.modal-content.fade-in {
+    animation-name: fadeInContent;
+}
+
+.modal-content.fade-out {
+    animation-name: fadeOutContent;
 }
 
 .modal-content a {
@@ -295,6 +324,29 @@ nav a.active {
     color: #888;
 }
 
+/* Анимация появления */
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOutModal {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutContent {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+
+
 /* === Плавающая кнопка === */
 .floating-contact {
     position: fixed;
@@ -302,11 +354,9 @@ nav a.active {
     right: 20px;
     width: 48px;
     height: 48px;
-    background-color: rgb(136
-    192
-    219);
+    background-color: rgb(136, 192, 219);
     border: none;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     border-radius: 50%;
     cursor: pointer;
@@ -315,8 +365,32 @@ nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
+    transition: transform 0.2s ease, background 0.3s ease;
 }
+
+
+
+/* Анимация при нажатии */
+.floating-contact:active {
+    transform: scale(0.92);
+}
+
+
+/*.page-background-main {*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: flex-start;*/
+/*    color: white;*/
+
+/*    background-image: url('../images/back_logo.png'); !* PNG логотип *!*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: contain;*/
+/*    background-position: center;*/
+/*    background-attachment: scroll;*/
+/*}*/
+
+
 
 .floating-contact:hover {
     transform: scale(1.08);
